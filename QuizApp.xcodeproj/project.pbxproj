@@ -12,6 +12,7 @@
 		825D5A7325C111A600574D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825D5A7125C111A600574D0D /* Main.storyboard */; };
 		825D5A7525C111A800574D0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 825D5A7425C111A800574D0D /* Assets.xcassets */; };
 		825D5A7825C111A800574D0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825D5A7625C111A800574D0D /* LaunchScreen.storyboard */; };
+		828A065925C2C00F00971C02 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828A065825C2C00F00971C02 /* ResultsViewController.swift */; };
 		82CFA5C725C1C0120038EC0C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CFA5C625C1C0120038EC0C /* HomeViewController.swift */; };
 		82CFA5CB25C1C0230038EC0C /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CFA5CA25C1C0230038EC0C /* QuestionsViewController.swift */; };
 		82CFA5D125C1C0660038EC0C /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CFA5D025C1C0660038EC0C /* HistoryTableViewController.swift */; };
@@ -26,6 +27,7 @@
 		825D5A7425C111A800574D0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		825D5A7725C111A800574D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		825D5A7925C111A800574D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		828A065825C2C00F00971C02 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		82CFA5C625C1C0120038EC0C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		82CFA5CA25C1C0230038EC0C /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		82CFA5D025C1C0660038EC0C /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				82CFA5C625C1C0120038EC0C /* HomeViewController.swift */,
 				82CFA5CA25C1C0230038EC0C /* QuestionsViewController.swift */,
 				82CFA5D025C1C0660038EC0C /* HistoryTableViewController.swift */,
+				828A065825C2C00F00971C02 /* ResultsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				82EF9D3F25C18C1F00EC3C86 /* Question.swift in Sources */,
 				82CFA5CB25C1C0230038EC0C /* QuestionsViewController.swift in Sources */,
 				825D5A6C25C111A600574D0D /* AppDelegate.swift in Sources */,
+				828A065925C2C00F00971C02 /* ResultsViewController.swift in Sources */,
 				82CFA5D125C1C0660038EC0C /* HistoryTableViewController.swift in Sources */,
 				825D5A6E25C111A600574D0D /* SceneDelegate.swift in Sources */,
 				82CFA5C725C1C0120038EC0C /* HomeViewController.swift in Sources */,
