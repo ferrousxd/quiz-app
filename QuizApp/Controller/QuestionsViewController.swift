@@ -81,7 +81,11 @@ extension QuestionsViewController {
         questionArray.append(Question(questionText: "🤡?", answers: ["😎", "🗿", "🦾", "👺"], correctAnswer: "🗿", userAnswer: nil))
         questionArray.append(Question(questionText: "😎?", answers: ["𒀝 𒅗 𒁺 𒌑", "ሰላም አለይኩም ወንድም", "你好", "안녕하세요"], correctAnswer: "你好", userAnswer: nil))
         questionArray.append(Question(questionText: "雪花飘飘北风萧萧 天地一片苍茫", answers: ["🥴", "🤯", "🤠", "☠️"], correctAnswer: "🤠", userAnswer: nil))
-        questionArray.append(Question(questionText: "Yes?", answers: ["fds", "dsf", "qwe", "fsd"], correctAnswer: "qwe", userAnswer: nil))
+        questionArray.append(Question(questionText: "¿Quieres?", answers: ["Si", "No", "Gracias", "Muchas gracias"], correctAnswer: "Muchas gracias", userAnswer: nil))
+        questionArray.append(Question(questionText: "𓀿?", answers: ["𓀲", "𓆲", "𓈪", "𓂀"], correctAnswer: "𓂀", userAnswer: nil))
+        questionArray.append(Question(questionText: "ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ?", answers: ["Тийм ээ", "Үгүй", "Би мэдэхгүй байна", "Найз руугаа залгаарай"], correctAnswer: "Тийм ээ", userAnswer: nil))
+        questionArray.append(Question(questionText: "𒀝 𒅗 𒁺 𒌑?", answers: ["𒁀𒉡𒌑", "𒍝𒇴 𒀭𒌍 𒀭𒊩𒌆𒃲", "𒀀𒈾 𒀾𒊑𒋙 𒇷𒌁", "𒀭𒂊 𒅇 𒌗𒁈"], correctAnswer: "𒀭𒂊 𒅇 𒌗𒁈", userAnswer: nil))
+        questionArray.append(Question(questionText: "When did the WW2 start?", answers: ["1939", "1914", "1954", "1941"], correctAnswer: "1939", userAnswer: nil))
     }
     
     func returnButtonsToInitialState() {
@@ -157,17 +161,31 @@ extension QuestionsViewController {
             return
         }))
 
-        present(quitFromQuizAlert, animated: true, completion: nil)
+        present(quitFromQuizAlert, animated: true)
+    }
+     
+    func getAttemptArrayFromUserDefaults(defaults: UserDefaults) -> [Int] {
+        guard let attemptArray = defaults.array(forKey: "attemptArray") as? [Int] else {
+            defaults.set([Int](), forKey: "attemptArray")
+            return []
+        }
+        return attemptArray
     }
     
     func submitQuiz() {
         let submitQuizAlert = UIAlertController(title: "Submit Quiz", message: "Are you sure about submitting the quiz?", preferredStyle: .alert)
         
         submitQuizAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            let defaults = UserDefaults.standard
+            let userScoreInPercents = 100 * self.userScore / self.questionArray.count
+            var attemptArray = self.getAttemptArrayFromUserDefaults(defaults: defaults)
+            
+            attemptArray.append(userScoreInPercents)
+            defaults.removeObject(forKey: "attemptArray")
+            defaults.set(attemptArray, forKey: "attemptArray")
+            
             let resultsViewController = self.storyboard?.instantiateViewController(identifier: "ResultsViewController") as! ResultsViewController
-            
-            resultsViewController.userScoreInPercents = 100 * self.userScore / self.questionArray.count
-            
+            resultsViewController.userScoreInPercents = userScoreInPercents
             self.navigationController?.pushViewController(resultsViewController, animated: true)
         }))
 

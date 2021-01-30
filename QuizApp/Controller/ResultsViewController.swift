@@ -45,7 +45,7 @@ class ResultsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func homePageAction(_ sender: Any) {
+    @IBAction func returnToHomePageAction(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
 }

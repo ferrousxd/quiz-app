@@ -39,12 +39,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DTF-Li-2ez">
-                                <rect key="frame" x="87" y="145" width="240" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="I6R-H5-9kR"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOD-pF-fyA">
                                 <rect key="frame" x="52" y="364" width="311" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,7 +47,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PTC-08-9Cg" kind="show" id="gPe-oQ-CCs"/>
+                                    <action selector="letsGoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S9k-kx-Nci"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sde-qw-RtQ">
@@ -63,25 +57,50 @@
                                 <state key="normal" title="History">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="OH1-qa-kcV" kind="show" id="JSf-Sb-qvR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QE2-mg-6EW" secondAttribute="trailing" constant="97" id="5p6-h8-Wbz"/>
-                            <constraint firstItem="DTF-Li-2ez" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="9dE-fb-9fS"/>
                             <constraint firstItem="QE2-mg-6EW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="NyD-Ho-Pou"/>
-                            <constraint firstItem="DTF-Li-2ez" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="Osr-mO-gFc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DTF-Li-2ez" secondAttribute="trailing" constant="87" id="cTV-xf-8T3"/>
                             <constraint firstItem="QE2-mg-6EW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hX4-r9-WaC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BGn-kp-6kU"/>
-                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+        <!--Attempts Table View Controller-->
+        <scene sceneID="9Eo-8d-a5A">
+            <objects>
+                <viewController storyboardIdentifier="AttemptsTableViewController" id="OH1-qa-kcV" customClass="AttemptsTableViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vJM-FC-qZS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x0E-jA-edE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TWU-sv-JMJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Np-sC-QhQ"/>
+                    <connections>
+                        <outlet property="attemptsTableView" destination="x0E-jA-edE" id="qAq-Ot-7zf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdc-Zy-XtB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="941"/>
         </scene>
         <!--Questions View Controller-->
         <scene sceneID="HGt-cD-0gw">
@@ -218,7 +237,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Home Page"/>
                                 <connections>
-                                    <action selector="homePageAction:" destination="vDK-kb-OAu" eventType="touchUpInside" id="KEM-F8-Szv"/>
+                                    <action selector="returnToHomePageAction:" destination="vDK-kb-OAu" eventType="touchUpInside" id="KVT-s3-aOG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Score Comment Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gt1-iR-AAn">

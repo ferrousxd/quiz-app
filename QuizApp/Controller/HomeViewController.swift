@@ -11,7 +11,15 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Home Page"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    @IBAction func letsGoAction(_ sender: Any) {
+        let questionsViewController = self.storyboard?.instantiateViewController(identifier: "QuestionsViewController") as! QuestionsViewController
+        self.navigationController?.pushViewController(questionsViewController, animated: true)
     }
 }
