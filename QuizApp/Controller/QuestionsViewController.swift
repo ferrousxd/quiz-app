@@ -76,15 +76,15 @@ class QuestionsViewController: UIViewController {
 extension QuestionsViewController {
     
     func populateQuestionArray() {
-        questionArray.append(Question(questionText: "What is your age?", answers: ["12", "23", "31", "5"], correctAnswer: "12", userAnswer: nil))
-        questionArray.append(Question(questionText: "How much is your outfit?", answers: ["1400$", "200₽", "1000₸", "🤷🏻‍♂️"], correctAnswer: "🤷🏻‍♂️", userAnswer: nil))
-        questionArray.append(Question(questionText: "🤡?", answers: ["😎", "🗿", "🦾", "👺"], correctAnswer: "🗿", userAnswer: nil))
-        questionArray.append(Question(questionText: "😎?", answers: ["𒀝 𒅗 𒁺 𒌑", "ሰላም አለይኩም ወንድም", "你好", "안녕하세요"], correctAnswer: "你好", userAnswer: nil))
-        questionArray.append(Question(questionText: "雪花飘飘北风萧萧 天地一片苍茫", answers: ["🥴", "🤯", "🤠", "☠️"], correctAnswer: "🤠", userAnswer: nil))
-        questionArray.append(Question(questionText: "¿Quieres?", answers: ["Si", "No", "Gracias", "Muchas gracias"], correctAnswer: "Muchas gracias", userAnswer: nil))
-        questionArray.append(Question(questionText: "𓀿?", answers: ["𓀲", "𓆲", "𓈪", "𓂀"], correctAnswer: "𓂀", userAnswer: nil))
-        questionArray.append(Question(questionText: "ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ?", answers: ["Тийм ээ", "Үгүй", "Би мэдэхгүй байна", "Найз руугаа залгаарай"], correctAnswer: "Тийм ээ", userAnswer: nil))
-        questionArray.append(Question(questionText: "𒀝 𒅗 𒁺 𒌑?", answers: ["𒁀𒉡𒌑", "𒍝𒇴 𒀭𒌍 𒀭𒊩𒌆𒃲", "𒀀𒈾 𒀾𒊑𒋙 𒇷𒌁", "𒀭𒂊 𒅇 𒌗𒁈"], correctAnswer: "𒀭𒂊 𒅇 𒌗𒁈", userAnswer: nil))
+        questionArray.append(Question(questionText: "Hello! How are you today?", answers: ["Hi, very nice", "Doing good, what about you?", "What's up?", "Fine"], correctAnswer: "What's up?", userAnswer: nil))
+        questionArray.append(Question(questionText: "Which brand has a crocodile as its logo?", answers: ["How should I know?", "Polo Ralph Lauren", "Lacoste", "Boss Hugo Boss"], correctAnswer: "Lacoste", userAnswer: nil))
+        questionArray.append(Question(questionText: "Which example is written in Japanese?", answers: ["這是中國人", "これは日本人です", "이것은 한국인입니다", "👺"], correctAnswer: "これは日本人です", userAnswer: nil))
+        questionArray.append(Question(questionText: "What is your favorite color?", answers: ["Red", "Green", "Black", "White"], correctAnswer: "Green", userAnswer: nil))
+        questionArray.append(Question(questionText: "How many planets are there in the solar system?", answers: ["7", "8", "15", "9"], correctAnswer: "8", userAnswer: nil))
+        questionArray.append(Question(questionText: "When GTA V came out?", answers: ["2021", "2007", "2013", "2010"], correctAnswer: "2013", userAnswer: nil))
+        questionArray.append(Question(questionText: "What is the smallest bird in the World?", answers: ["Hummingbird", "Ostrich", "Griffin", "Sparrow"], correctAnswer: "Hummingbird", userAnswer: nil))
+        questionArray.append(Question(questionText: "Who is the director of \"Pulp Fiction\"?", answers: ["Steven Spielberg", "Christopher Nolan", "Quentin Tarantino", "Michael Bay"], correctAnswer: "Quentin Tarantino", userAnswer: nil))
+        questionArray.append(Question(questionText: "Who was the first president of the USSR?", answers: ["V. Lenin", "I. Stalin", "L. Brezhnev", "M. Gorbachev"], correctAnswer: "M. Gorbachev", userAnswer: nil))
         questionArray.append(Question(questionText: "When did the WW2 start?", answers: ["1939", "1914", "1954", "1941"], correctAnswer: "1939", userAnswer: nil))
     }
     
@@ -136,7 +136,6 @@ extension QuestionsViewController {
         }
     }
     
-    // This function is called when the user submits his answer or navigates through the questions
     func updateViewControllerContentForQuestionWith(questionIndex: Int) {
         let question = questionArray[questionIndex]
         changeLabelsAndButtonsValuesFor(question: question)
